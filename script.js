@@ -12,8 +12,6 @@ var charSpecial = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 var userInput = prompt(
   "Please select a passweod length? (Between 8-128 characters)"
 );
-var passwordLength = parseInt(userInput);
-console.log(passwordLength);
 
 var upperCase = confirm("Do you want to include upper case letters?");
 if (upperCase === false) {
@@ -33,17 +31,23 @@ if (numbers === true) {
   var userNum = numSet[Math.floor(Math.random() * numSet.length)];
 }
 
+var passwordLength = parseInt(userInput);
+
 function characterGen() {
   var randomInstance = [userGuessLower || userGuessUpper, userSpSel, userNum];
   //  console.log(userGuessLower || userGuessUpper, userSpSel, userNum);
-  console.log(
-    randomInstance[Math.floor(Math.random() * randomInstance.length)]
-  );
 }
 
 characterGen();
 
-//given test...
+function loop() {
+  for (var i = 0; i < passwordLength; i++) {
+    console.log(characterGen());
+  }
+}
+loop();
+
+//given text...
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
