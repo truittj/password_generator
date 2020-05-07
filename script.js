@@ -4,11 +4,10 @@
 //var userInput = #
 //Prompt
 var charSet = "qwertyuiopasdfghjklzxvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
-var num = 1234567890;
+var numSet = "1234567890";
 var charSpecial = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
 //var passwordLength = prompt("Please select a passweod length? (Between 8-128 characters)");
-//var numbers = confirm("Do you want to inlucde numbers?");
 // Assignment Code
 
 var userInput = prompt(
@@ -23,20 +22,25 @@ var upperCase = confirm("Do you want to include upper case letters?");
 
 if (upperCase === false) {
   charSet = charSet.toLowerCase();
-  var computerGuessUpper = charSet[Math.floor(Math.random() * charSet.length)];
-  console.log(computerGuessUpper);
+  var userGuessUpper = charSet[Math.floor(Math.random() * charSet.length)];
+  console.log(userGuessUpper);
 } else {
-  var computerGuessLower = charSet[Math.floor(Math.random() * charSet.length)];
-  console.log(computerGuessLower);
+  var userGuessLower = charSet[Math.floor(Math.random() * charSet.length)];
+  console.log(userGuessLower);
 }
 
 var specialCharacters = confirm("Do want to include special characters?");
 if (specialCharacters === true) {
-  var userSpSel = charSpecial[Math.floor(Math.random() * charSet.length)];
+  var userSpSel = charSpecial[Math.floor(Math.random() * charSpecial.length)];
+
   console.log(userSpSel);
 }
 
-// Randomly chooses a choice from the options array. This is the Computer's guess.
+var numbers = confirm("Do you want to inlucde numbers?");
+if (numbers === true) {
+  var userNum = numSet[Math.floor(Math.random() * numSet.length)];
+  console.log(userNum);
+}
 
 var generateBtn = document.querySelector("#generate");
 
