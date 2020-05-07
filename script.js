@@ -7,12 +7,13 @@ var charSet = "qwertyuiopasdfghjklzxvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
 var numSet = "1234567890";
 var charSpecial = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
-//var passwordLength = prompt("Please select a passweod length? (Between 8-128 characters)");
 // Assignment Code
 
 var userInput = prompt(
   "Please select a passweod length? (Between 8-128 characters)"
 );
+var passwordLength = parseInt(userInput);
+console.log(passwordLength);
 
 var upperCase = confirm("Do you want to include upper case letters?");
 if (upperCase === false) {
@@ -42,6 +43,7 @@ function characterGen() {
 
 characterGen();
 
+//given test...
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
