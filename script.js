@@ -33,9 +33,15 @@ if (numbers === true) {
 }
 
 function characterGen() {
-  //console.log(userGuessLower || userGuessUpper, userSpSel, userNum);
-  for (var i = 0; i < characterGen; i++) {
-    var instance = [i(Math.floor(Math.random() * characterGen.length))];
+  var randomInstance = [
+    "userGuessLower" || "userGuessUpper",
+    "userSpSel",
+    "userNum",
+  ];
+  //  console.log(userGuessLower || userGuessUpper, userSpSel, userNum);
+  for (var i = 0; i < randomInstance.length; i++) {
+    var instance =
+      randomInstance[Math.floor(Math.random() * randomInstance.length)];
     console.log(instance);
   }
 }
