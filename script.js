@@ -33,18 +33,13 @@ if (numbers === true) {
 }
 
 function characterGen() {
-  var randomInstance = [
-    "userGuessLower" || "userGuessUpper",
-    "userSpSel",
-    "userNum",
-  ];
+  var randomInstance = [userGuessLower || userGuessUpper, userSpSel, userNum];
   //  console.log(userGuessLower || userGuessUpper, userSpSel, userNum);
-  for (var i = 0; i < randomInstance.length; i++) {
-    var instance =
-      randomInstance[Math.floor(Math.random() * randomInstance.length)];
-    console.log(instance);
-  }
+  console.log(
+    randomInstance[Math.floor(Math.random() * randomInstance.length)]
+  );
 }
+
 characterGen();
 
 var generateBtn = document.querySelector("#generate");
