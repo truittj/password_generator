@@ -35,31 +35,26 @@ if (userInput < 8 || userInput > 128) {
   //console.log(passwordLength);
   // need if statement
 
-  //turns user input into an interger
-  var passwordLength = parseInt(userInput);
-
-  //an array of all the possible lists
-  var randomInstance = (userGuessLower || userGuessUpper, userSpSel, userNum);
-  //creates a single instance of the actual array's
-
-  //trying to build an array with the user data
-  //array is not changing randomly
   function characterGen() {
+    //turns user input into an interger
+    var passwordLength = parseInt(userInput);
+
+    //an array of all the possible lists
+    var randomInstance = [userGuessLower || userGuessUpper, userSpSel, userNum];
+    //creates a single instance of the actual array's
+    var randomCharacter =
+      randomInstance[Math.floor(Math.random() * randomInstance.length)];
+    //trying to build an array with the user data
+    //array is not changing randomly
     builtArray = [];
-    var i = 0;
-    while (i < passwordLength) {
-      i++;
-      var randomCharacter =
-        randomInstance[Math.floor(Math.random() * randomInstance.length)];
-
+    for (i = 0; i < passwordLength; i++) {
       builtArray.push(randomCharacter);
+      var pWord = builtArray.join("");
     }
-
-    //for (i = 0; i < passwordLength; i++) {
-    //builtArray.push(randomCharacter);
-    //}
-    console.log(builtArray);
-    return builtArray;
+    //checking to se if password gen works
+    console.log(pWord);
+    //returning the value of the array becoming a string
+    return pWord;
     //console.log(randomCharacter);
   }
 
