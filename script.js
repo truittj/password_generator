@@ -40,7 +40,6 @@ if (userInput < 8 || userInput > 128) {
     var passwordLength = parseInt(userInput);
 
     //an array of all the possible lists
-    var randomInstance = [userGuessLower || userGuessUpper, userSpSel, userNum];
     //creates a single instance of the actual array's
     //console.log(randomInstance.indexOf);
     //var randomCharacter =
@@ -51,15 +50,22 @@ if (userInput < 8 || userInput > 128) {
     builtArray = [];
     for (i = 0; i < passwordLength; ) {
       if (i < passwordLength) {
+        //this is adding some context to the password
+        var randomInstance = [
+          userGuessLower || userGuessUpper,
+          userSpSel,
+          userNum,
+        ];
         var randomCharacter =
           randomInstance[Math.floor(Math.random() * randomInstance.length)];
         i++;
       }
+      //creating the array
       builtArray.push(randomCharacter);
       var pWord = builtArray.join("");
     }
     //checking to see if password gen works
-    console.log(pWord);
+    //console.log(pWord);
     //returning the value of the array becoming a string
     return pWord;
     //console.log(randomCharacter);
