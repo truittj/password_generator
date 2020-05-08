@@ -49,10 +49,11 @@ if (userInput < 8 || userInput > 128) {
     //console.log(randomInstance.indexOf);
     //array is not changing randomly
     builtArray = [];
-    for (i = 0; i < passwordLength; i++) {
+    for (i = 0; i < passwordLength; ) {
       if (i < passwordLength) {
         var randomCharacter =
           randomInstance[Math.floor(Math.random() * randomInstance.length)];
+        i++;
       }
       builtArray.push(randomCharacter);
       var pWord = builtArray.join("");
