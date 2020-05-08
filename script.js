@@ -19,36 +19,40 @@ if (upperCase === false) {
   var userGuessUpper = charSet[Math.floor(Math.random() * charSet.length)];
 } else {
   var userGuessLower = charSet[Math.floor(Math.random() * charSet.length)];
-}
+};
 
 var specialCharacters = confirm("Do want to include special characters?");
 if (specialCharacters === true) {
   var userSpSel = charSpecial[Math.floor(Math.random() * charSpecial.length)];
-}
+};
 
 var numbers = confirm("Do you want to inlucde numbers?");
 if (numbers === true) {
   var userNum = numSet[Math.floor(Math.random() * numSet.length)];
-}
-
-var long = function howLong() {
-  var passwordLength = parseInt(userInput);
-  //console.log(passwordLength);
 };
 
-var rando = function characterGen() {
+//console.log(passwordLength);
+
+function characterGen() {
+  //turns user input into an interger
+  var passwordLength = parseInt(userInput);
+  //creates an array of all the possible lists
   var randomInstance = [userGuessLower || userGuessUpper, userSpSel, userNum];
   //  console.log(userGuessLower || userGuessUpper, userSpSel, userNum);
+  //creates a single instance of the actual array's
   var randomCharacter =
     randomInstance[Math.floor(Math.random() * randomInstance.length)];
+  //trying to build an array with the user data
+  builtArray = [];
+  for (i = 0; i < passwordLength; i++) {
+    builtArray.push(randomCharacter);
+  }
+  console.log(builtArray);
+
   //return randomCharacter;
-  //console.log(randomCharacter);
-};
-builtArray = [];
-for (i = 0; i <= long.length; i++) {
-  builtArray.push(characterGen());
+  console.log(randomCharacter);
 }
-console.log(builtArray);
+characterGen()
 //given text...
 var generateBtn = document.querySelector("#generate");
 
