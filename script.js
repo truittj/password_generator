@@ -1,5 +1,4 @@
 //Universal Variables go here
-
 //var computerOutput= #
 //var userInput = #
 //Prompt
@@ -34,33 +33,42 @@ if (userInput < 8 || userInput > 128) {
   }
 
   //console.log(passwordLength);
+  // need if statement
 
+  //turns user input into an interger
+  var passwordLength = parseInt(userInput);
+
+  //an array of all the possible lists
+  var randomInstance = (userGuessLower || userGuessUpper, userSpSel, userNum);
+  //creates a single instance of the actual array's
+
+  //trying to build an array with the user data
+  //array is not changing randomly
   function characterGen() {
-    //turns user input into an interger
-    var passwordLength = parseInt(userInput);
-
-    //an array of all the possible lists
-    var randomInstance = [userGuessLower || userGuessUpper, userSpSel, userNum];
-    //creates a single instance of the actual array's
-    var randomCharacter =
-      randomInstance[Math.floor(Math.random() * randomInstance.length)];
-    //trying to build an array with the user data
     builtArray = [];
-    for (i = 0; i < passwordLength; i++) {
+    var i = 0;
+    while (i < passwordLength) {
+      i++;
+      var randomCharacter =
+        randomInstance[Math.floor(Math.random() * randomInstance.length)];
+
       builtArray.push(randomCharacter);
     }
-    console.log(builtArray);
 
-    //return randomCharacter;
+    //for (i = 0; i < passwordLength; i++) {
+    //builtArray.push(randomCharacter);
+    //}
+    console.log(builtArray);
+    return builtArray;
     //console.log(randomCharacter);
   }
-  characterGen();
+
   //given text...
   var generateBtn = document.querySelector("#generate");
 
   // Write password to the #password input
   function writePassword() {
-    var password = generatePassword();
+    var password = characterGen();
     var passwordText = document.querySelector("#password");
 
     passwordText.value = password;
