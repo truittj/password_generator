@@ -7,7 +7,7 @@ var numSet = "1234567890";
 var charSpecial = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
 // Assignment Code
-
+//Asking a t/f if user wants to include lower case or upper case letters
 var userInput = prompt(
   "Please select a password length? (Between 8-128 characters)"
 );
@@ -21,12 +21,12 @@ if (userInput < 8 || userInput > 128) {
   } else {
     var userGuessLower = charSet[Math.floor(Math.random() * charSet.length)];
   }
-
+  //Asking a t/f if user wants to include special characters
   var specialCharacters = confirm("Do want to include special characters?");
   if (specialCharacters === true) {
     var userSpSel = charSpecial[Math.floor(Math.random() * charSpecial.length)];
   }
-
+  //Asking a t/f if user wants to include numbers
   var numbers = confirm("Do you want to inlucde numbers?");
   if (numbers === true) {
     var userNum = numSet[Math.floor(Math.random() * numSet.length)];
@@ -40,10 +40,16 @@ if (userInput < 8 || userInput > 128) {
     var passwordLength = parseInt(userInput);
 
     //an array of all the possible lists
-    var randomInstance = [userGuessLower || userGuessUpper, userSpSel, userNum];
+    //var randomInstance = [userGuessLower, userGuessUpper, userSpSel, userNum];
     //creates a single instance of the actual array's
-    var randomCharacter =
-      randomInstance[Math.floor(Math.random() * randomInstance.length)];
+
+    //bringing all variables into on arry
+    var randomCharacter = [userGuessLower, userGuessUpper, userSpSel, userNum][
+      Math.floor(
+        Math.random() *
+          [userGuessLower, userGuessUpper, userSpSel, userNum].length
+      )
+    ];
     //trying to build an array with the user data
     //array is not changing randomly
     builtArray = [];
